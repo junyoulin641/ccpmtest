@@ -48,6 +48,48 @@ def main():
                           anchor=tk.W)
     status_bar.pack(side=tk.BOTTOM, fill=tk.X)
 
+    def on_execute():
+        """Handle execute button click"""
+        # Clear previous results
+        result_text.config(state='normal')
+        result_text.delete('1.0', tk.END)
+
+        # Get input
+        input_value = input_entry.get().strip()
+
+        # Validate input
+        if not input_value:
+            status_bar.config(text="⚠️ Please enter some text first")
+            result_text.config(state='disabled')
+            return
+
+        # Update status to processing
+        status_bar.config(text="⏳ Processing...")
+        root.update_idletasks()  # Force UI update
+
+        try:
+            # Process text
+            result = process_text(input_value)
+
+            # Display result
+            result_text.insert('1.0', result)
+            status_bar.config(text="✅ Complete")
+
+        except Exception as e:
+            # Display error
+            error_msg = f"❌ Error: {str(e)}"
+            status_bar.config(text=error_msg)
+            result_text.insert('1.0', f"Processing failed: {str(e)}")
+
+        finally:
+            result_text.config(state='disabled')
+
+    # Connect execute button to handler
+    execute_btn.config(command=on_execute)
+
+    # Bind Enter key in input field to trigger execute
+    input_entry.bind('<Return>', lambda e: on_execute())
+
     # Start main loop
     root.mainloop()
 

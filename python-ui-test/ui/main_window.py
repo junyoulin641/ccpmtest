@@ -13,10 +13,11 @@ from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5.QtGui import QKeySequence
 
 from .placeholder_screens import (
-    DashboardScreen, VisualizeScreen, SettingsScreen, ExportScreen
+    DashboardScreen, SettingsScreen, ExportScreen
 )
 from .import_screen import ImportScreen
 from .table_screen import TableScreen
+from .viz_screen import VizScreen
 
 
 class MainWindow(QMainWindow):
@@ -165,12 +166,12 @@ class MainWindow(QMainWindow):
                 """)
 
     def init_screens(self):
-        """Initialize placeholder screens."""
+        """Initialize application screens."""
         self.screens = [
             DashboardScreen(),
             ImportScreen(),
             TableScreen(),
-            VisualizeScreen(),
+            VizScreen(),
             SettingsScreen(),
             ExportScreen()
         ]

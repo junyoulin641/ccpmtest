@@ -13,10 +13,10 @@ from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5.QtGui import QKeySequence
 
 from .placeholder_screens import (
-    DashboardScreen, TableScreen,
-    VisualizeScreen, SettingsScreen, ExportScreen
+    DashboardScreen, VisualizeScreen, SettingsScreen, ExportScreen
 )
 from .import_screen import ImportScreen
+from .table_screen import TableScreen
 
 
 class MainWindow(QMainWindow):

@@ -42,7 +42,9 @@
       "WebSearch",
       "SlashCommand(/pm:prd-parse:*)",
       "SlashCommand(/pm:epic-decompose:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(bash:*)",
+      "SlashCommand(/pm:prd-new python-ui-test 幫我建立一個簡易 python UI)"
     ]
   }
 }

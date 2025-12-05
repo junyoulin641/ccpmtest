@@ -1,8 +1,8 @@
 ---
 name: python-ui-test
-status: backlog
+status: in-progress
 created: 2025-12-04T07:05:29Z
-progress: 0%
+progress: 87%
 prd: .claude/prds/python-ui-test.md
 github: https://github.com/junyoulin641/ccpmtest/issues/8
 ---
